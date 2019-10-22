@@ -1,9 +1,7 @@
 <template>
   <div id="app">        
-    <NumberInput v-model="bla"  />    
-   
-    App: {{bla}}
-     
+    <NumberInput :numberValue="bla" v-on:emitnumber="bla=$event" />   
+    App: {{bla}}     
   </div>
 </template>
 
@@ -17,7 +15,7 @@ export default {
   },
   data() {
     return {
-      bla: "4"
+      bla: "21"
     }
   }
 };

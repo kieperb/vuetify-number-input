@@ -1,20 +1,31 @@
 <template>
   <div >
     <v-text-field    
-     v-bind:value="value"     
-    ></v-text-field>
- 
+     v-model="value"     
+     :input="$emit('emitnumber', value)"
+    ></v-text-field> 
+  
+  Value: {{value}}
   <br>
-  NumberinputValue: {{value}}
+  numberValue: {{numberValue}}
   </div>
 </template>
 
 <script>
 export default {
   name: "NumberInput",
+  created: function () {
+ this.value = this.blub;    
+  },
   watch: {
     value: function (val) {
-      this.value = isNaN(parseFloat(val)) ? 0 : parseFloat(val);     
+      this.value = isNaN(parseFloat(val)) ? 0 : parseFloat(val);  
+       
+    }    
+  },
+  computed: {
+    blub: function () {
+      return this.numberValue;
     }
   },
   props: {
@@ -22,7 +33,7 @@ export default {
   },
   data() {
     return {
-      value: 5
+      value: 7
     }
   }
 };
