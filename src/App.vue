@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      bla: "21"
+      bla: "2"
     }
   }
 };
