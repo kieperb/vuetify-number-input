@@ -8,7 +8,7 @@
 export default {
   name: "NumberInput",
   created: function() {
-    this.value = this.blub;
+    this.value = this.computedNumberValue;
   },
   watch: {
     value: function(val) {
@@ -16,7 +16,7 @@ export default {
     }
   },
   computed: {
-    blub: function() {
+    computedNumberValue: function() {
       return this.numberValue;
     }
   },
