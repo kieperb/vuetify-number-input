@@ -1,7 +1,9 @@
 <template>
-  <div id="app">        
-    <NumberInput :numberValue="bla" v-on:emitnumber="bla=$event" />   
-    App: {{bla}}     
+  <div id="app">
+    <NumberInput :numberValue="bla" v-on:emitnumber="bla=$event"/>
+    App: {{bla}}
+    <br>
+    {{typeof bla}}
   </div>
 </template>
 
@@ -15,8 +17,8 @@ export default {
   },
   data() {
     return {
-      bla: "21"
-    }
+      bla: 0
+    };
   }
 };
 </script>
