@@ -4,8 +4,10 @@
     v-model="value" 
     :dissabled="dissabled"
     :input="$emit('emitnumber', value)"
-    
-    
+    :hint="hint"
+    :placeholder="placeholder"
+    :solo="solo"
+    :dense="dense"
   ></v-text-field> 
 </template>
 
@@ -26,8 +28,12 @@ export default {
     }
   },
   props: {
+    dense: Boolean,
+    solo: Boolean,
+    placeholder: String,
+    hint: String,
     dissabled: Boolean,
-    label: String,
+    label: String,    
     numberValue: Number
   },
   data() {

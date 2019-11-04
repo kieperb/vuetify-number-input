@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <NumberInput label="NumberInput" :numberValue="bla" v-on:emitnumber="bla=$event"/>
-    App: {{bla}} (is a {{typeof bla}})
+    <v-form>
+      <v-container>
+        <NumberInput solo  dense placeholder="0" hint="if empty value is 0" label="NumberInput" :numberValue="bla" v-on:emitnumber="bla=$event"/>
+        App: {{bla}} (is a {{typeof bla}})
+       </v-container>
+    </v-form>
   </div>
-</template>
+ </template>
 
 <script>
 import NumberInput from "./components/NumberInput";
