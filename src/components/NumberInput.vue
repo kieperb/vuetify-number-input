@@ -1,7 +1,12 @@
-<template>
-  <div>
-    <v-text-field v-model="value" :input="$emit('emitnumber', value)"></v-text-field>
-  </div>
+<template> 
+  <v-text-field 
+    :label="label" 
+    v-model="value" 
+    :dissabled="dissabled"
+    :input="$emit('emitnumber', value)"
+    
+    
+  ></v-text-field> 
 </template>
 
 <script>
@@ -21,6 +26,8 @@ export default {
     }
   },
   props: {
+    dissabled: Boolean,
+    label: String,
     numberValue: Number
   },
   data() {

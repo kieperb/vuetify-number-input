@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <NumberInput :numberValue="bla" v-on:emitnumber="bla=$event"/>
+    <NumberInput label="NumberInput" :numberValue="bla" v-on:emitnumber="bla=$event"/>
     App: {{bla}} (is a {{typeof bla}})
   </div>
 </template>
