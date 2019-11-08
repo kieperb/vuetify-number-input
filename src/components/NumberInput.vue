@@ -1,44 +1,60 @@
-<template> 
-  <v-text-field 
-    :label="label" 
-    v-model="value" 
+<template>
+  <v-text-field
+    :label="label"
+    v-model="numberValue"
     :dissabled="dissabled"
-    :input="$emit('emitnumber', value)"
+    :input="$emit('emitnumber', numberValue)"
     :hint="hint"
     :placeholder="placeholder"
     :solo="solo"
     :dense="dense"
-  ></v-text-field> 
+    :filled="filled"
+    :outlined="outlined"
+    :shaped="shaped"
+    :rounded="rounded"
+    :single-line="singleLine"
+    :clearable="clearable"
+    :persistent-hint="persistentHint"
+    :counter="counter"
+  ></v-text-field>
 </template>
 
 <script>
 export default {
   name: "NumberInput",
   created: function() {
-    this.value = this.computedNumberValue;
+    this.numberValue = this.computedNumberValue;
   },
   watch: {
-    value: function(val) {
-      this.value = isNaN(parseFloat(val)) ? 0 : parseFloat(val);
+    numberValue: function(val) {
+      this.numberValue = isNaN(parseFloat(val)) ? 0 : parseFloat(val);
     }
   },
   computed: {
     computedNumberValue: function() {
-      return this.numberValue;
+      return this.value;
     }
   },
   props: {
+    persistentHint: Boolean,
+    counter: Number,
+    clearable: Boolean,
+    singleLine: Boolean,
+    outlined: Boolean,
+    filled: Boolean,
     dense: Boolean,
     solo: Boolean,
     placeholder: String,
     hint: String,
     dissabled: Boolean,
-    label: String,    
-    numberValue: Number
+    label: String,
+    value: Number,
+    shaped: Boolean,
+    rounded: Boolean
   },
   data() {
     return {
-      value: 0
+      numberValue: 0
     };
   }
 };
