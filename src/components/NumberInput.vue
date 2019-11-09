@@ -36,21 +36,57 @@ export default {
     }
   },
   props: {
-    persistentHint: Boolean,
-    counter: Number,
-    clearable: Boolean,
-    singleLine: Boolean,
-    outlined: Boolean,
-    filled: Boolean,
-    dense: Boolean,
-    solo: Boolean,
+    persistentHint: {
+      type: Boolean,
+      default: false
+    },
+    counter: {
+      type: Number,
+      default: null
+    },
+    clearable: {
+      type: Boolean,
+      default: false
+    },
+    singleLine: {
+      type: Boolean,
+      default: false
+    },
+    outlined: {
+      type: Boolean,
+      default: false
+    },
+    filled: {
+      type: Boolean,
+      default: false
+    },
+    dense: {
+      type: Boolean,
+      default: false
+    },
+    solo: {
+      type: Boolean,
+      default: false
+    },
     placeholder: String,
     hint: String,
-    dissabled: Boolean,
+    dissabled: {
+      type: Boolean,
+      default: false
+    },
     label: String,
-    value: Number,
-    shaped: Boolean,
-    rounded: Boolean
+    value: {
+      type: Number,
+      default: 0
+    },
+    shaped: {
+      type: Boolean,
+      default: false
+    },
+    rounded: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
