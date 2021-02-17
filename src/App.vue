@@ -3,31 +3,39 @@
     <v-form>
       <v-container>
         <NumberInput
-          solo
-          dense
           placeholder="0"
           hint="if empty value is 0"
           label="NumberInput"
-          :value="bla"
-          v-on:emitnumber="bla=$event"
+          v-model="bla"
+          v-on:emitnumber="bla = $event"
         ></NumberInput>
 
-        App: {{bla}} (is a {{typeof bla}})
-        <NumberInput label="NumberInput"></NumberInput>
+        <NumberInput v-model="bla" label="NumberInput"></NumberInput>
 
-        <NumberInput placeholder="Placeholder" label="NumberInput"></NumberInput>
+        <NumberInput
+          v-model="bla"
+          placeholder="Placeholder"
+          label="NumberInput"
+        ></NumberInput>
 
-        <NumberInput label="Solo" solo></NumberInput>
+        <NumberInput v-model="bla" label="Solo" solo></NumberInput>
 
-        <NumberInput label="Solo" placeholder="Placeholder" solo></NumberInput>
+        <NumberInput
+          v-model="bla"
+          label="Solo"
+          placeholder="Placeholder"
+          solo
+        ></NumberInput>
 
-        <NumberInput label="Filled" filled></NumberInput>
+        <NumberInput v-model="bla" label="Filled" filled></NumberInput>
 
-        <NumberInput label="Filled" placeholder="Placeholder" filled></NumberInput>
-
-        <NumberInput label="Outlined" outlined></NumberInput>
-
-        <NumberInput style label="Outlined" placeholder="Placeholder" outlined></NumberInput>
+        <NumberInput
+          v-model="bla"
+          label="Filled"
+          placeholder="Placeholder"
+          filled
+        ></NumberInput>
+        App: {{ bla }} (is a {{ typeof bla }})
       </v-container>
     </v-form>
   </div>
@@ -39,13 +47,13 @@ import NumberInput from "./components/NumberInput";
 export default {
   name: "App",
   components: {
-    NumberInput
+    NumberInput,
   },
   data() {
     return {
-      bla: 0
+      bla: 0,
     };
-  }
+  },
 };
 </script>
 
